@@ -1,10 +1,10 @@
-###科大讯飞AIUI功能测试
+### 科大讯飞AIUI功能测试
 
-###接入指南
+### 接入指南
 
-####在清单中配置如下：
+#### 在清单中配置如下：
 
-######权限
+###### 权限
 
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -18,16 +18,16 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-######在清单Application中添加KEY
+###### 在清单Application中添加KEY
 
     需要申请
     <meta-data
     android:name="IFLYTEK_APPKEY"
     android:value="59a3f271" />
 
-####复制so库和jar包
+#### 复制so库和jar包
 
-######功能组件添加
+###### 功能组件添加
 
     把从AIUI处下载的SDK解压，然后复制libs文件夹里的如下文件放到工程的libs里
     armeabi
@@ -35,7 +35,7 @@
     Msc.jar
     Sunflower.jar
 
-######加载功能组件
+###### 加载功能组件
 
     打开model的build.gradle，在defaultConfig{}里添加
 
@@ -55,7 +55,7 @@
     }
 ```
 
-####添加cfg、vad文件夹
+#### 添加cfg、vad文件夹
 
     在刚才解压的SDK文件夹里，找到assets文件夹复制cfg文件夹，回到android工程，在模块里新建asstes文件夹，把刚才复制的cfg粘贴到asstes里
     同样的，把解压的res/vad文件夹复制到刚才提到的位置
@@ -68,7 +68,7 @@
             vad
                 meta_vad_16k.jet
 
-####Application中初始化
+#### Application中初始化
 
     在onCreate中
 
@@ -76,9 +76,9 @@
 SpeechUtility.createUtility(getApplicationContext(), SpeechConstant.APPID + "=59a3f271");
 ```
 
-####开始使用
+#### 开始使用
 
-######构造识别代理
+###### 构造识别代理
 
     * 首先构造AIUI代理，该功能模块是在原语音识别基础上构造起来的，当识别语音时，返回识别结果，同时也返回讯飞的AI语义匹配结果
 
@@ -227,7 +227,7 @@ private AIUIListener mAIUIListener = new AIUIResultListener();
     }
 ```
 
-######开启识别功能
+###### 开启识别功能
 
 ```
     /**
@@ -253,7 +253,7 @@ private AIUIListener mAIUIListener = new AIUIResultListener();
     }
 ```
 
-######关闭语音识别功能（可再开启）
+###### 关闭语音识别功能（可再开启）
 
 ```
     /**
