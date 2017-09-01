@@ -269,9 +269,9 @@ private AIUIListener mAIUIListener = new AIUIResultListener();
     }
 ```
 
-###到此，AIUI的功能配置完毕
+### 到此，AIUI的功能配置完毕
 
-###TTS功能（Text To Speech）
+### TTS功能（Text To Speech）
 
 如果你还需要朗读文字功能，可以尝试以下方法：
 
